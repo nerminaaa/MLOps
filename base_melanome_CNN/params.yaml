@@ -1,0 +1,39 @@
+
+MLOps_status: Experimental
+batch: 16
+data_ver: v1.0
+epochs: 5
+evaluation_metrics:  
+  - accuracy
+  - loss
+imgsz:
+  - 124
+  - 124
+labeling_mode: categorical
+lr0: 0.001
+
+model_cfg: 
+  architecture: CNN
+  layers:
+    - type: Conv2D
+      filters: 32
+      kernel_size:
+        - 3
+        - 3
+    - type: MaxPooling2D
+      pool_size:
+        - 2
+        - 2
+    - type: Dropout
+      rate: 0.4
+  input_shape:
+    - 124
+    - 124
+    - 3 
+
+model_type: Classification
+name: Image_Classification_Model
+optimizer: adam
+pretraining: none
+seed: 42
+train_mode: augmentation
